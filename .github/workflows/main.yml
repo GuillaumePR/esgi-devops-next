@@ -41,7 +41,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'devops-next'
-          slot-name: 'production'
+          app-name: 'esgi-devops-next'
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
           images: ${{ secrets.DOCKER_USERNAME }}/devops-next:${{ github.sha }}
