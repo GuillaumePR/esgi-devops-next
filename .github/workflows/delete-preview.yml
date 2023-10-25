@@ -22,4 +22,4 @@ jobs:
         with:
           azcliversion: 2.30.0
           inlineScript: |
-            az container delete --name esgi-${{ env.GUTHUB_HEAD_REF_SLUG }} --ressource-group esgi --yes
+            az container delete --name ${{ env.GITHUB_HEAD_REF_SLUG}}pr --ressource-group esgi --yes
