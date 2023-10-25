@@ -1,4 +1,4 @@
-name: Test preview pull-request
+name: Test
 
 on:
   pull_request:
@@ -36,10 +36,11 @@ jobs:
         uses: "azure/aci-deploy@v1"
         with:
           resource-group: esgi
-          dns-name-label: ${{ env.GITHUB_HEAD_REF_SLUG}}-esgi
+          dns-name-label: ${{ env.GITHUB_HEAD_REF_SLUG}}pr
           image: ${{ secrets.DOCKER_USERNAME }}/devops-next:${{ github.sha }}
           registry-username: ${{ secrets.DOCKER_USERNAME }}
           registry-password: ${{ secrets.DOCKER_PASSWORD }}
-          name: esgi-${{ env.GITHUB_HEAD_REF_SLUG}}
+          registry-login-server: index.docker.io
+          name: ${{ env.GITHUB_HEAD_REF_SLUG}}pr
           location: "francecentral"
           port: 3000
