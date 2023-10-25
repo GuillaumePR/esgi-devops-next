@@ -51,6 +51,7 @@ export default function Contact() {
                     <button type="submit">Envoyer</button>
                 </div>
             </form>
+            <p id="validation"></p>
         </main>
     );
 }
